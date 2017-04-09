@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Hello Serverless</title>
+        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+    </head>
+    <body>
+        <div class="container">
+            <div class="col-md-7 col-md-offset-2">
+                <h1>Hello Serverless</h1>
+                <div>
+                    <textarea id="output" class="form-control" rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>
+            (function() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'URL',
+                    success: function(data) {
+                        $("#output").val(data.message);
+                    },
+                    error: function(xmlHttpRequest, textStatus) {
+                        $("#output").val('failed.');
+                    }
+                });
+            })();
+        </script>
+    </body>
+</html>
